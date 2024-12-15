@@ -21,69 +21,90 @@
 
         private void InitializeComponent()
         {
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnEntrar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            lblPassword = new Label();
+            txtPassword = new TextBox();
+            btnEntrar = new Button();
+            btnSair = new Button();
+            SuspendLayout();
+            // 
             // lblEmail
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(50, 30);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblEmail.Text = "Email:";
-
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(67, 46);
+            lblEmail.Margin = new Padding(4, 0, 4, 0);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(49, 20);
+            lblEmail.TabIndex = 0;
+            lblEmail.Text = "Email:";
+            // 
             // txtEmail
-            this.txtEmail.Location = new System.Drawing.Point(120, 27);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 20);
-
+            // 
+            txtEmail.Location = new Point(160, 42);
+            txtEmail.Margin = new Padding(4, 5, 4, 5);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(265, 27);
+            txtEmail.TabIndex = 1;
+            // 
             // lblPassword
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(50, 70);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblPassword.Text = "Password:";
-
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Location = new Point(67, 108);
+            lblPassword.Margin = new Padding(4, 0, 4, 0);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(73, 20);
+            lblPassword.TabIndex = 2;
+            lblPassword.Text = "Password:";
+            // 
             // txtPassword
-            this.txtPassword.Location = new System.Drawing.Point(120, 67);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(200, 20);
-
+            // 
+            txtPassword.Location = new Point(160, 103);
+            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(265, 27);
+            txtPassword.TabIndex = 3;
+            // 
             // btnEntrar
-            this.btnEntrar.Location = new System.Drawing.Point(70, 110);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(100, 30);
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
-
+            // 
+            btnEntrar.Location = new Point(93, 169);
+            btnEntrar.Margin = new Padding(4, 5, 4, 5);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(133, 46);
+            btnEntrar.TabIndex = 4;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click;
+            // 
             // btnSair
-            this.btnSair.Location = new System.Drawing.Point(190, 110);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(100, 30);
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-
+            // 
+            btnSair.Location = new Point(253, 169);
+            btnSair.Margin = new Padding(4, 5, 4, 5);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(133, 46);
+            btnSair.TabIndex = 5;
+            btnSair.Text = "Sair";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Click += btnSair_Click;
+            // 
             // LoginForm
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 170);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.btnSair);
-            this.Name = "LoginForm";
-            this.Text = "Login";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(493, 262);
+            Controls.Add(lblEmail);
+            Controls.Add(txtEmail);
+            Controls.Add(lblPassword);
+            Controls.Add(txtPassword);
+            Controls.Add(btnEntrar);
+            Controls.Add(btnSair);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "LoginForm";
+            Text = "Login";
+            Load += LoginForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

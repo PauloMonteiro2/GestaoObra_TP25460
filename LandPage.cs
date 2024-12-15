@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GestaoObra_TP25460.Funcionario;
+using System;
 using System.Windows.Forms;
 
 namespace GestaoObra_TP25460
@@ -15,6 +9,24 @@ namespace GestaoObra_TP25460
         public LandPage()
         {
             InitializeComponent();
+        }
+
+        private void btnAddFuncionario_Click(object sender, EventArgs e)
+        {
+            var form = new AddFuncionario();
+            form.Show();
+        }
+
+        private void btnAddObra_Click(object sender, EventArgs e)
+        {
+            var form = new AddObraForm();
+            form.Show();
+        }
+
+        private void btnAddViatura_Click(object sender, EventArgs e)
+        {
+            var form = new AddViaturaForm();
+            form.Show();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace GestaoObra_TP25460
             if (login.ValidarCredenciais())
             {
                 MessageBox.Show("Login bem-sucedido! Bem-vindo.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Aqui você pode abrir o formulário principal da aplicação
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
