@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
-namespace GestaoObra_TP25460.Funcionario
+namespace GestaoObra_TP25460.Models
 {
     public class Funcionario
     {
@@ -16,19 +14,37 @@ namespace GestaoObra_TP25460.Funcionario
         public double Salario { get; set; }
         public Tipo TipoCargo { get; set; }
 
-        private static string CaminhoArquivo => Path.Combine("C:\\GO_A25460_TP\\Funcionarios.txt");
+        private static string CaminhoArquivo => Path.Combine("C:\\GestaoObra_TP25460\\Funcionarios.txt");
 
-        public static int ProximoId()
+        public static List<Funcionario> CarregarFuncionarios()
         {
-            if (!File.Exists(CaminhoArquivo)) return 1;
-            var linhas = File.ReadAllLines(CaminhoArquivo);
-            return linhas.Length + 1;
+            var funcionarios = new List<Funcionario>();
+            if (File.Exists(CaminhoArquivo))
+            {
+                foreach (var linha in File.ReadAllLines(CaminhoArquivo))
+                {
+                    var partes = linha.Split(';');
+                    if (partes.Length == 7)
+                    {
+                        funcionarios.Add(new Funcionario
+                        {
+                            Id = int.Parse(partes[0]),
+                            Nome = partes[1],
+                            Morada = partes[2],
+                            Password = partes[3],
+                            Email = partes[4],
+                            Salario = double.Parse(partes[5]),
+                            TipoCargo = new Tipo { Id = int.Parse(partes[6]) }
+                        });
+                    }
+                }
+            }
+            return funcionarios;
         }
 
-        public static void SalvarFuncionario(Funcionario funcionario)
+        public override string ToString()
         {
-            var linha = $"{funcionario.Id};{funcionario.Nome};{funcionario.Morada};{funcionario.Password};{funcionario.Email};{funcionario.Salario};{funcionario.TipoCargo.Id}";
-            File.AppendAllText(CaminhoArquivo, linha + Environment.NewLine);
+            return $"{Id};{Nome};{Morada};{Password};{Email};{Salario};{TipoCargo.Id}";
         }
     }
 }

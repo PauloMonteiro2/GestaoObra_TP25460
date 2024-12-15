@@ -6,9 +6,12 @@ namespace GestaoObra_TP25460
 {
     public partial class LandPage : Form
     {
+        private GestaoViaturas gestaoViaturas;
+
         public LandPage()
         {
             InitializeComponent();
+            gestaoViaturas = new GestaoViaturas();
         }
 
         private void btnAddFuncionario_Click(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace GestaoObra_TP25460
 
         private void btnAddViatura_Click(object sender, EventArgs e)
         {
-            var form = new AddViaturaForm();
+            var form = new AddViaturaForm(gestaoViaturas);
             form.Show();
         }
     }
