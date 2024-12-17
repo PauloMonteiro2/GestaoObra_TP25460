@@ -31,5 +31,16 @@ namespace GestaoObra_TP25460
             var form = new AddViaturaForm(gestaoViaturas);
             form.Show();
         }
+
+        private void BtnAddFuncionario_Click(object sender, EventArgs e)
+        {
+            var form = new AddFuncionario();
+            form.Show();
+        }
+
+        private void LandPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
