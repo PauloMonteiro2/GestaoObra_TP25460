@@ -13,6 +13,7 @@ namespace GestaoObra_TP25460.Models
         public string Email { get; set; }
         public double Salario { get; set; }
         public Tipo TipoCargo { get; set; }
+        public string Cargo { get; set; }
 
         private static string CaminhoArquivo => Path.Combine("C:\\GestaoObra_TP25460\\Funcionarios.txt");
 
