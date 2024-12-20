@@ -7,18 +7,25 @@ namespace GestaoObra_TP25460
     // Classe para gerenciar as viaturas
     public class GestaoViaturas
     {
+        #region Atributos
         // Lista de viaturas gerenciada pela classe
         private List<Viatura> viaturas;
+        #endregion
 
-        // Construtor
+        #region Construtor
+        // Construtor que inicializa a lista de viaturas
         public GestaoViaturas()
         {
             viaturas = new List<Viatura>();
         }
+        #endregion
 
+        #region Propriedades
         // Propriedade para acessar as viaturas (apenas leitura)
         public IReadOnlyList<Viatura> Viaturas => viaturas.AsReadOnly();
+        #endregion
 
+        #region Métodos para Gestão de Viaturas
         // Método para adicionar uma viatura
         public void AdicionarViatura(Viatura viatura)
         {
@@ -100,5 +107,6 @@ namespace GestaoObra_TP25460
                 return false;
             }
         }
+        #endregion
     }
 }
