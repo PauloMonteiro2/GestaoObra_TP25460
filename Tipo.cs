@@ -11,7 +11,7 @@ namespace GestaoObra_TP25460
         public int Id { get; set; }
         public string Descricao { get; set; }
 
-        private static string CaminhoArquivo => Path.Combine("C:\\GestaoObra_TP25460\\Tipos.txt");
+        private static string CaminhoArquivo => Path.Combine("C:\\GestaoObra_TP25460\\Data\\Tipos.txt");
 
         public static List<Tipo> CarregarTipos()
         {

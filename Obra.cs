@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,22 @@ namespace GestaoObra_TP25460
 {
     public class Obra
     {
+        #region Propriedades da Obra
         // Propriedades da obra
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public decimal Orcamento { get; private set; }
-        public decimal CustosTotais { get; private set; }
-        public DateTime DataInicio { get; set; }
-        public DateTime? DataConclusao { get; set; }
-        public string Estado { get; private set; }
+        public string Nome { get; set; } // Nome da obra
+        public string Descricao { get; set; } // Descrição detalhada da obra
+        public decimal Orcamento { get; private set; } // Orçamento inicial da obra
+        public decimal CustosTotais { get; private set; } // Custos totais acumulados
+        public DateTime DataInicio { get; set; } // Data de início da obra
+        public DateTime? DataConclusao { get; set; } // Data de conclusão da obra (opcional)
+        public string Estado { get; private set; } // Estado atual da obra (ex: "Em andamento")
+        #endregion
 
+        #region Caminho do Arquivo
+        private static readonly string CaminhoArquivo = Path.Combine("C:\\GestaoObra_TP25460\\Data\\Obra.txt");
+        #endregion
+
+        #region Construtor
         // Construtor para inicializar a obra
         public Obra(string nome, string descricao, decimal orcamento, DateTime dataInicio)
         {
@@ -27,7 +35,9 @@ namespace GestaoObra_TP25460
             CustosTotais = 0;
             Estado = "Em andamento";
         }
+        #endregion
 
+        #region Métodos para Manipulação de Custos e Estado
         // Método para adicionar um custo à obra
         public void AdicionarCusto(decimal custo)
         {
@@ -55,7 +65,9 @@ namespace GestaoObra_TP25460
             Console.WriteLine($"Orçamento restante: {orcamentoRestante:C}");
             return orcamentoRestante;
         }
+        #endregion
 
+        #region Métodos para Exibição de Informações
         // Método para exibir todas as informações da obra
         public void ExibirInformacoes()
         {
@@ -69,5 +81,52 @@ namespace GestaoObra_TP25460
             Console.WriteLine($"Data de Conclusão: {(DataConclusao.HasValue ? DataConclusao.Value.ToShortDateString() : "Não definida")}");
             Console.WriteLine($"Estado: {Estado}");
         }
+        #endregion
+
+        #region Métodos de Persistência em Arquivo
+        // Método para salvar a obra no arquivo TXT
+        public void SalvarObra()
+        {
+            string linha = $"{Nome}|{Descricao}|{Orcamento}|{CustosTotais}|{DataInicio:yyyy-MM-dd}|{(DataConclusao.HasValue ? DataConclusao.Value.ToString("yyyy-MM-dd") : "null")}|{Estado}";
+            File.AppendAllText(CaminhoArquivo, linha + Environment.NewLine);
+            Console.WriteLine("Obra salva com sucesso no arquivo TXT.");
+        }
+
+        // Método para carregar todas as obras do arquivo TXT
+        public static List<Obra> CarregarObras()
+        {
+            List<Obra> obras = new List<Obra>();
+
+            if (File.Exists(CaminhoArquivo))
+            {
+                string[] linhas = File.ReadAllLines(CaminhoArquivo);
+                foreach (string linha in linhas)
+                {
+                    string[] partes = linha.Split('|');
+                    if (partes.Length == 7)
+                    {
+                        string nome = partes[0];
+                        string descricao = partes[1];
+                        decimal orcamento = decimal.Parse(partes[2]);
+                        decimal custosTotais = decimal.Parse(partes[3]);
+                        DateTime dataInicio = DateTime.Parse(partes[4]);
+                        DateTime? dataConclusao = partes[5] != "null" ? DateTime.Parse(partes[5]) : null;
+                        string estado = partes[6];
+
+                        Obra obra = new Obra(nome, descricao, orcamento, dataInicio)
+                        {
+                            CustosTotais = custosTotais,
+                            DataConclusao = dataConclusao,
+                            Estado = estado
+                        };
+
+                        obras.Add(obra);
+                    }
+                }
+            }
+
+            return obras;
+        }
+        #endregion
     }
 }
