@@ -28,7 +28,7 @@ namespace GestaoObra_TP25460
 
         private void btnAddViatura_Click(object sender, EventArgs e)
         {
-            var form = new AddViaturaForm(gestaoViaturas);
+            var form = new AddViaturaForm();
             form.Show();
         }
 
