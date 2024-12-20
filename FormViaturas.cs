@@ -8,7 +8,7 @@ namespace GestaoObra_TP25460
 {
     public partial class FormViaturas : Form
     {
-        private GestaoViaturas gestaoViaturas;
+        public GestaoViaturas gestaoViaturas;
 
         public object viaturas { get; private set; }
 
@@ -19,7 +19,11 @@ namespace GestaoObra_TP25460
             AtualizarListaViaturas();
         }
 
-        private void AtualizarListaViaturas()
+        public FormViaturas()
+        {
+        }
+
+        public void AtualizarListaViaturas()
         {
             listViewViaturas.Items.Clear();
 
@@ -29,7 +33,7 @@ namespace GestaoObra_TP25460
             }
         }
 
-        private void AdicionarViaturaNaLista(Viatura viatura)
+        public void AdicionarViaturaNaLista(Viatura viatura)
         {
             ListViewItem item = new ListViewItem(viatura.Matricula);
             item.SubItems.Add(viatura.Marca);
@@ -44,12 +48,12 @@ namespace GestaoObra_TP25460
             AtualizarListaViaturas();
         }
 
-        private void btnListarDisponiveis_Click(object sender, EventArgs e)
+        public void btnListarDisponiveis_Click(object sender, EventArgs e)
         {
             btnListarDisponiveis_Click(sender, e, viaturas);
         }
 
-        private void btnListarDisponiveis_Click(object sender, EventArgs e, object viaturas)
+        public void btnListarDisponiveis_Click(object sender, EventArgs e, object viaturas)
         {
             listViewViaturas.Items.Clear();
 
@@ -62,6 +66,11 @@ namespace GestaoObra_TP25460
             {
                 AdicionarViaturaNaLista(viatura);
             }
+        }
+
+        private void FormViaturas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

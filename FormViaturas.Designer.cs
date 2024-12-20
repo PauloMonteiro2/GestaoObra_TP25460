@@ -15,66 +15,87 @@
 
         private void InitializeComponent()
         {
-            this.listViewViaturas = new System.Windows.Forms.ListView();
-            this.colMatricula = new System.Windows.Forms.ColumnHeader();
-            this.colMarca = new System.Windows.Forms.ColumnHeader();
-            this.colModelo = new System.Windows.Forms.ColumnHeader();
-            this.colAno = new System.Windows.Forms.ColumnHeader();
-            this.colEstado = new System.Windows.Forms.ColumnHeader();
-            this.btnExibirViaturas = new System.Windows.Forms.Button();
-            this.btnListarDisponiveis = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-
+            listViewViaturas = new ListView();
+            colMatricula = new ColumnHeader();
+            colMarca = new ColumnHeader();
+            colModelo = new ColumnHeader();
+            colAno = new ColumnHeader();
+            colEstado = new ColumnHeader();
+            btnExibirViaturas = new Button();
+            btnListarDisponiveis = new Button();
+            SuspendLayout();
+            // 
             // listViewViaturas
-            this.listViewViaturas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-                this.colMatricula,
-                this.colMarca,
-                this.colModelo,
-                this.colAno,
-                this.colEstado});
-            this.listViewViaturas.FullRowSelect = true;
-            this.listViewViaturas.GridLines = true;
-            this.listViewViaturas.Location = new System.Drawing.Point(12, 12);
-            this.listViewViaturas.Name = "listViewViaturas";
-            this.listViewViaturas.Size = new System.Drawing.Size(560, 300);
-            this.listViewViaturas.View = System.Windows.Forms.View.Details;
-
-            // Column Headers
-            this.colMatricula.Text = "Matrícula";
-            this.colMatricula.Width = 100;
-            this.colMarca.Text = "Marca";
-            this.colMarca.Width = 120;
-            this.colModelo.Text = "Modelo";
-            this.colModelo.Width = 120;
-            this.colAno.Text = "Ano";
-            this.colAno.Width = 80;
-            this.colEstado.Text = "Estado";
-            this.colEstado.Width = 100;
-
+            // 
+            listViewViaturas.Columns.AddRange(new ColumnHeader[] { colMatricula, colMarca, colModelo, colAno, colEstado });
+            listViewViaturas.FullRowSelect = true;
+            listViewViaturas.GridLines = true;
+            listViewViaturas.Location = new Point(12, 15);
+            listViewViaturas.Margin = new Padding(3, 4, 3, 4);
+            listViewViaturas.Name = "listViewViaturas";
+            listViewViaturas.Size = new Size(560, 374);
+            listViewViaturas.TabIndex = 0;
+            listViewViaturas.UseCompatibleStateImageBehavior = false;
+            listViewViaturas.View = View.Details;
+            // 
+            // colMatricula
+            // 
+            colMatricula.Text = "Matrícula";
+            colMatricula.Width = 100;
+            // 
+            // colMarca
+            // 
+            colMarca.Text = "Marca";
+            colMarca.Width = 120;
+            // 
+            // colModelo
+            // 
+            colModelo.Text = "Modelo";
+            colModelo.Width = 120;
+            // 
+            // colAno
+            // 
+            colAno.Text = "Ano";
+            colAno.Width = 80;
+            // 
+            // colEstado
+            // 
+            colEstado.Text = "Estado";
+            colEstado.Width = 100;
+            // 
             // btnExibirViaturas
-            this.btnExibirViaturas.Location = new System.Drawing.Point(12, 330);
-            this.btnExibirViaturas.Name = "btnExibirViaturas";
-            this.btnExibirViaturas.Size = new System.Drawing.Size(150, 30);
-            this.btnExibirViaturas.Text = "Exibir Todas";
-            this.btnExibirViaturas.Click += new System.EventHandler(this.btnExibirViaturas_Click);
-
+            // 
+            btnExibirViaturas.Location = new Point(12, 412);
+            btnExibirViaturas.Margin = new Padding(3, 4, 3, 4);
+            btnExibirViaturas.Name = "btnExibirViaturas";
+            btnExibirViaturas.Size = new Size(150, 38);
+            btnExibirViaturas.TabIndex = 1;
+            btnExibirViaturas.Text = "Exibir Todas";
+            btnExibirViaturas.Click += btnExibirViaturas_Click;
+            // 
             // btnListarDisponiveis
-            this.btnListarDisponiveis.Location = new System.Drawing.Point(180, 330);
-            this.btnListarDisponiveis.Name = "btnListarDisponiveis";
-            this.btnListarDisponiveis.Size = new System.Drawing.Size(150, 30);
-            this.btnListarDisponiveis.Text = "Listar Disponíveis";
-            this.btnListarDisponiveis.Click += new System.EventHandler(this.btnListarDisponiveis_Click);
-
+            // 
+            btnListarDisponiveis.Location = new Point(180, 412);
+            btnListarDisponiveis.Margin = new Padding(3, 4, 3, 4);
+            btnListarDisponiveis.Name = "btnListarDisponiveis";
+            btnListarDisponiveis.Size = new Size(150, 38);
+            btnListarDisponiveis.TabIndex = 2;
+            btnListarDisponiveis.Text = "Listar Disponíveis";
+            btnListarDisponiveis.Click += btnListarDisponiveis_Click;
+            // 
             // FormViaturas
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 381);
-            this.Controls.Add(this.listViewViaturas);
-            this.Controls.Add(this.btnExibirViaturas);
-            this.Controls.Add(this.btnListarDisponiveis);
-            this.Name = "FormViaturas";
-            this.Text = "Gestão de Viaturas";
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(584, 476);
+            Controls.Add(listViewViaturas);
+            Controls.Add(btnExibirViaturas);
+            Controls.Add(btnListarDisponiveis);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FormViaturas";
+            Text = "Gestão de Viaturas";
+            Load += FormViaturas_Load;
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.ListView listViewViaturas;

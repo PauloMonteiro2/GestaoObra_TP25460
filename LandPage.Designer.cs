@@ -10,71 +10,79 @@ namespace GestaoObra_TP25460
         private System.Windows.Forms.Button btnAddObra;
         private System.Windows.Forms.Button btnAddViatura;
         private System.Windows.Forms.Button btnEditarFuncionario;
+        private System.Windows.Forms.Button btnFormViaturas;
 
         private void InitializeComponent()
         {
-            this.btnAddFuncionario = new System.Windows.Forms.Button();
-            this.btnAddObra = new System.Windows.Forms.Button();
-            this.btnAddViatura = new System.Windows.Forms.Button();
-            this.btnEditarFuncionario = new System.Windows.Forms.Button();
-
-            this.SuspendLayout();
-
-            // Configuração do botão Adicionar Funcionário
-            this.btnAddFuncionario.Name = "btnAddFuncionario";
-            this.btnAddFuncionario.Text = "Adicionar Funcionário";
-            this.btnAddFuncionario.Location = new System.Drawing.Point(50, 50);
-            this.btnAddFuncionario.Size = new System.Drawing.Size(200, 30);
-            this.btnAddFuncionario.Click += new System.EventHandler(this.btnAddFuncionario_Click);
-
-            // Configuração do botão Adicionar Obra
-            this.btnAddObra.Name = "btnAddObra";
-            this.btnAddObra.Text = "Adicionar Obra";
-            this.btnAddObra.Location = new System.Drawing.Point(50, 100);
-            this.btnAddObra.Size = new System.Drawing.Size(200, 30);
-            this.btnAddObra.Click += new System.EventHandler(this.btnAddObra_Click);
-
-            // Configuração do botão Adicionar Viatura
-            this.btnAddViatura.Name = "btnAddViatura";
-            this.btnAddViatura.Text = "Adicionar Viatura";
-            this.btnAddViatura.Location = new System.Drawing.Point(50, 150);
-            this.btnAddViatura.Size = new System.Drawing.Size(200, 30);
-            this.btnAddViatura.Click += new System.EventHandler(this.btnAddViatura_Click);
-
-            // Configuração do botão Editar Funcionário
-            this.btnEditarFuncionario.Name = "btnEditarFuncionario";
-            this.btnEditarFuncionario.Text = "Editar Funcionário";
-            this.btnEditarFuncionario.Location = new System.Drawing.Point(50, 200);
-            this.btnEditarFuncionario.Size = new System.Drawing.Size(200, 30);
-            this.btnEditarFuncionario.Click += new System.EventHandler(this.btnEditarFuncionario_Click);
-
-            // Configuração do formulário
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAddFuncionario);
-            this.Controls.Add(this.btnAddObra);
-            this.Controls.Add(this.btnAddViatura);
-            this.Controls.Add(this.btnEditarFuncionario);
-            this.Text = "Gestão de Obras";
-            this.ResumeLayout(false);
+            btnAddFuncionario = new Button();
+            btnAddObra = new Button();
+            btnAddViatura = new Button();
+            btnEditarFuncionario = new Button();
+            btnFormViaturas = new Button();
+            SuspendLayout();
+            // 
+            // btnAddFuncionario
+            // 
+            btnAddFuncionario.Location = new Point(50, 50);
+            btnAddFuncionario.Name = "btnAddFuncionario";
+            btnAddFuncionario.Size = new Size(200, 30);
+            btnAddFuncionario.TabIndex = 0;
+            btnAddFuncionario.Text = "Adicionar Funcionário";
+            btnAddFuncionario.Click += btnAddFuncionario_Click;
+            // 
+            // btnAddObra
+            // 
+            btnAddObra.Location = new Point(50, 100);
+            btnAddObra.Name = "btnAddObra";
+            btnAddObra.Size = new Size(200, 30);
+            btnAddObra.TabIndex = 1;
+            btnAddObra.Text = "Adicionar Obra";
+            btnAddObra.Click += btnAddObra_Click;
+            // 
+            // btnAddViatura
+            // 
+            btnAddViatura.Location = new Point(50, 150);
+            btnAddViatura.Name = "btnAddViatura";
+            btnAddViatura.Size = new Size(200, 30);
+            btnAddViatura.TabIndex = 2;
+            btnAddViatura.Text = "Adicionar Viatura";
+            btnAddViatura.Click += btnAddViatura_Click;
+            // 
+            // btnEditarFuncionario
+            // 
+            btnEditarFuncionario.Location = new Point(50, 200);
+            btnEditarFuncionario.Name = "btnEditarFuncionario";
+            btnEditarFuncionario.Size = new Size(200, 30);
+            btnEditarFuncionario.TabIndex = 3;
+            btnEditarFuncionario.Text = "Editar Funcionário";
+            // 
+            // btnFormViaturas
+            // 
+            btnFormViaturas.Location = new Point(50, 250);
+            btnFormViaturas.Name = "btnFormViaturas";
+            btnFormViaturas.Size = new Size(200, 30);
+            btnFormViaturas.TabIndex = 4;
+            btnFormViaturas.Text = "Gerir Viaturas";
+            btnFormViaturas.Click += btnFormViaturas_Click;
+            // 
+            // LandPage
+            // 
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnAddFuncionario);
+            Controls.Add(btnAddObra);
+            Controls.Add(btnAddViatura);
+            Controls.Add(btnEditarFuncionario);
+            Controls.Add(btnFormViaturas);
+            Name = "LandPage";
+            Text = "Gestão de Obras";
+            Load += LandPage_Load_2;
+            ResumeLayout(false);
         }
 
-        private void btnEditarFuncionario_Click(object sender, EventArgs e)
+        private void btnFormViaturas_Click(object sender, EventArgs e)
         {
-            int funcionarioId = GetFuncionarioID();
-            if (funcionarioId >= 0)
-            {
-                var form = new EditarFuncionarioForm(funcionarioId);
-                form.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Selecione ou insira um ID válido para editar.");
-            }
-        }
-
-        private int GetFuncionarioID()
-        {
-            return 1; // Retorna um ID fictício
+            var form = new FormViaturas();
+            form.ShowDialog();
         }
     }
 }
