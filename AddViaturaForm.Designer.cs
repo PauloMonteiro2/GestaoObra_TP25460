@@ -2,21 +2,23 @@
 {
     partial class AddViaturaForm
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private System.Windows.Forms.Label lblMatricula;
+        // Declaração dos componentes
         private System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.Label lblAno;
         private System.Windows.Forms.NumericUpDown numAno;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.Button btnCancelar;
 
+        /// <summary>
+        /// Limpa recursos em uso.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -26,87 +28,78 @@
             base.Dispose(disposing);
         }
 
+        #region Windows Form Designer generated code
+
         private void InitializeComponent()
         {
-            this.lblMatricula = new System.Windows.Forms.Label();
             this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.lblMarca = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.lblModelo = new System.Windows.Forms.Label();
             this.txtModelo = new System.Windows.Forms.TextBox();
-            this.lblAno = new System.Windows.Forms.Label();
             this.numAno = new System.Windows.Forms.NumericUpDown();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
 
             ((System.ComponentModel.ISupportInitialize)(this.numAno)).BeginInit();
             this.SuspendLayout();
 
-            // Matrícula
-            this.lblMatricula.Text = "Matrícula:";
-            this.lblMatricula.Location = new System.Drawing.Point(20, 20);
-            this.txtMatricula.Location = new System.Drawing.Point(120, 20);
-            this.txtMatricula.Size = new System.Drawing.Size(200, 20);
+            // txtMatricula
+            this.txtMatricula.Location = new System.Drawing.Point(30, 30);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(200, 22);
 
-            // Marca
-            this.lblMarca.Text = "Marca:";
-            this.lblMarca.Location = new System.Drawing.Point(20, 60);
-            this.txtMarca.Location = new System.Drawing.Point(120, 60);
-            this.txtMarca.Size = new System.Drawing.Size(200, 20);
+            // txtMarca
+            this.txtMarca.Location = new System.Drawing.Point(30, 70);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(200, 22);
 
-            // Modelo
-            this.lblModelo.Text = "Modelo:";
-            this.lblModelo.Location = new System.Drawing.Point(20, 100);
-            this.txtModelo.Location = new System.Drawing.Point(120, 100);
-            this.txtModelo.Size = new System.Drawing.Size(200, 20);
+            // txtModelo
+            this.txtModelo.Location = new System.Drawing.Point(30, 110);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(200, 22);
 
-            // Ano
-            this.lblAno.Text = "Ano:";
-            this.lblAno.Location = new System.Drawing.Point(20, 140);
-            this.numAno.Location = new System.Drawing.Point(120, 140);
-            this.numAno.Maximum = 2050;
-            this.numAno.Minimum = 1980;
-            this.numAno.Value = DateTime.Now.Year;
+            // numAno
+            this.numAno.Location = new System.Drawing.Point(30, 150);
+            this.numAno.Maximum = 2100;
+            this.numAno.Minimum = 1900;
+            this.numAno.Name = "numAno";
+            this.numAno.Size = new System.Drawing.Size(200, 22);
 
-            // Estado
-            this.lblEstado.Text = "Estado:";
-            this.lblEstado.Location = new System.Drawing.Point(20, 180);
-            this.cmbEstado.Location = new System.Drawing.Point(120, 180);
-            this.cmbEstado.Items.AddRange(new string[] { "Disponível", "Em Manutenção", "Indisponível" });
-            this.cmbEstado.SelectedIndex = 0;
+            // cmbEstado
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Disponível",
+            "Em Manutenção",
+            "Indisponível"});
+            this.cmbEstado.Location = new System.Drawing.Point(30, 190);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(200, 24);
 
-            // Botão Adicionar
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.Location = new System.Drawing.Point(50, 220);
-            this.btnAdicionar.Size = new System.Drawing.Size(100, 30);
+            // btnAdicionar
+            this.btnAdicionar.Location = new System.Drawing.Point(30, 240);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(200, 30);
+            this.btnAdicionar.Text = "Adicionar Viatura";
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
 
-            // Botão Cancelar
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Location = new System.Drawing.Point(180, 220);
-            this.btnCancelar.Size = new System.Drawing.Size(100, 30);
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-
-            // Form
-            this.ClientSize = new System.Drawing.Size(350, 280);
-            this.Controls.Add(this.lblMatricula);
+            // AddViaturaForm
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(300, 300);
             this.Controls.Add(this.txtMatricula);
-            this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.lblModelo);
             this.Controls.Add(this.txtModelo);
-            this.Controls.Add(this.lblAno);
             this.Controls.Add(this.numAno);
-            this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.btnCancelar);
             this.Name = "AddViaturaForm";
             this.Text = "Adicionar Viatura";
+
+            ((System.ComponentModel.ISupportInitialize)(this.numAno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        #endregion
     }
 }

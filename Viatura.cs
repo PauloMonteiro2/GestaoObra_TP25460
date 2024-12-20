@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestaoObra_TP25460
 {
-    // Classe para representar uma viatura
+    // Classe para representar uma viatura e gerenciar a lista de viaturas
     public class Viatura
     {
         // Propriedades da viatura
@@ -16,14 +13,17 @@ namespace GestaoObra_TP25460
         public int Ano { get; set; }
         public string Estado { get; private set; }
 
-        // Construtor para inicializar a viatura
+        // Lista de viaturas gerenciada pela classe
+        private static List<Viatura> Viaturas = new List<Viatura>();
+
+        // Construtor com parâmetros obrigatórios
         public Viatura(string matricula, string marca, string modelo, int ano, string estadoInicial = "Disponível")
         {
-            Matricula = matricula;
-            Marca = marca;
-            Modelo = modelo;
+            Matricula = matricula ?? throw new ArgumentNullException(nameof(matricula));
+            Marca = marca ?? throw new ArgumentNullException(nameof(marca));
+            Modelo = modelo ?? throw new ArgumentNullException(nameof(modelo));
             Ano = ano;
-            Estado = estadoInicial;
+            Estado = estadoInicial ?? "Disponível";
         }
 
         // Método para atualizar o estado da viatura
@@ -42,32 +42,21 @@ namespace GestaoObra_TP25460
             Console.WriteLine($"Ano: {Ano}");
             Console.WriteLine($"Estado: {Estado}");
         }
-    }
 
-    // Classe para gerir a lista de viaturas
-    public class GestaoViaturas
-    {
-        private List<Viatura> viaturas;
-
-        public GestaoViaturas()
+        // Método para adicionar uma viatura à lista
+        public static void AdicionarViatura(Viatura viatura)
         {
-            viaturas = new List<Viatura>();
-        }
-
-        // Função para adicionar uma viatura
-        public void AdicionarViatura(Viatura viatura)
-        {
-            viaturas.Add(viatura);
+            Viaturas.Add(viatura);
             Console.WriteLine($"Viatura {viatura.Matricula} adicionada com sucesso.");
         }
 
-        // Função para remover uma viatura usando a matrícula
-        public bool RemoverViatura(string matricula)
+        // Método para remover uma viatura pela matrícula
+        public static bool RemoverViatura(string matricula)
         {
-            Viatura viatura = viaturas.Find(v => v.Matricula == matricula);
+            Viatura viatura = Viaturas.Find(v => v.Matricula == matricula);
             if (viatura != null)
             {
-                viaturas.Remove(viatura);
+                Viaturas.Remove(viatura);
                 Console.WriteLine($"Viatura {matricula} removida com sucesso.");
                 return true;
             }
@@ -78,10 +67,10 @@ namespace GestaoObra_TP25460
             }
         }
 
-        // Função para consultar uma viatura específica pela matrícula
-        public void ConsultarViatura(string matricula)
+        // Método para consultar uma viatura específica pela matrícula
+        public static void ConsultarViatura(string matricula)
         {
-            Viatura viatura = viaturas.Find(v => v.Matricula == matricula);
+            Viatura viatura = Viaturas.Find(v => v.Matricula == matricula);
             if (viatura != null)
             {
                 Console.WriteLine("Informações da Viatura:");
@@ -93,11 +82,11 @@ namespace GestaoObra_TP25460
             }
         }
 
-        // Função para exibir todas as viaturas
-        public void ExibirViaturas()
+        // Método para exibir todas as viaturas
+        public static void ExibirViaturas()
         {
             Console.WriteLine("Lista de Viaturas:");
-            foreach (var viatura in viaturas)
+            foreach (var viatura in Viaturas)
             {
                 viatura.ExibirInformacoes();
                 Console.WriteLine("------------------------");
