@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
+
 
 namespace GestaoObra_TP25460
 {
     public partial class FormViaturas : Form
     {
         private GestaoViaturas gestaoViaturas;
+
+        public object viaturas { get; private set; }
 
         public FormViaturas(GestaoViaturas gestao)
         {
@@ -42,10 +46,19 @@ namespace GestaoObra_TP25460
 
         private void btnListarDisponiveis_Click(object sender, EventArgs e)
         {
+            btnListarDisponiveis_Click(sender, e, viaturas);
+        }
+
+        private void btnListarDisponiveis_Click(object sender, EventArgs e, object viaturas)
+        {
             listViewViaturas.Items.Clear();
 
-            var viaturasDisponiveis = gestaoViaturas.Viaturas.FindAll(v => v.Estado == "Disponível");
-            foreach (var viatura in viaturasDisponiveis)
+            // Certifique-se de que viaturas está corretamente tipada
+            var listaViaturas = ((IEnumerable<Viatura>)viaturas).ToList();
+
+            var resultado = listaViaturas.FindAll(v => v.Estado == "Disponível");
+
+            foreach (var viatura in resultado)
             {
                 AdicionarViaturaNaLista(viatura);
             }
