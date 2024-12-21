@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace GestaoObra_TP25460
+namespace GestaoObra_TP25460.Classes
 {
     public class Viatura
     {

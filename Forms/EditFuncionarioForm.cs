@@ -1,13 +1,13 @@
-﻿using GestaoObra_TP25460.Models;
+﻿using GestaoObra_TP25460.Classes;
 
 namespace GestaoObra_TP25460.Forms
 {
     public partial class EditFuncionarioForm : Form
     {
-        private GestaoObra_TP25460.Models.Funcionario funcionarioAtual;
+        private Classes.Funcionario funcionarioAtual;
         private int funcionarioId;
 
-        public EditFuncionarioForm(GestaoObra_TP25460.Models.Funcionario funcionario)
+        public EditFuncionarioForm(Classes.Funcionario funcionario)
         {
             InitializeComponent();
             funcionarioAtual = funcionario;
@@ -19,7 +19,7 @@ namespace GestaoObra_TP25460.Forms
             this.funcionarioId = funcionarioId;
         }
 
-        private void PreencherDados(GestaoObra_TP25460.Models.Funcionario funcionario)
+        private void PreencherDados(Classes.Funcionario funcionario)
         {
             txtId.Text = funcionario.Id.ToString();
             txtNome.Text = funcionario.Nome;

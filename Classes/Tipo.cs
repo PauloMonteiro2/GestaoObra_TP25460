@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestaoObra_TP25460
+namespace GestaoObra_TP25460.Classes
 {
     public class Tipo
     {

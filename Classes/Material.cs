@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestaoObra_TP25460
+namespace GestaoObra_TP25460.Classes
 {
     // Classe para representar um Material no Armazém
     public class Material

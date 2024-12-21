@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using GestaoObra_TP25460.Models;
 
-namespace GestaoObra_TP25460.Models
+namespace GestaoObra_TP25460.Classes
 {
     public static class RepositorioFuncionarios
     {

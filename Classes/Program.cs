@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace GestaoObra_TP25460
+namespace GestaoObra_TP25460.Classes
 {
     static class Program
     {

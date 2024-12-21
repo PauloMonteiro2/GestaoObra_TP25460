@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using GestaoObra_TP25460.Models; // Importa o namespace correto
 
 namespace GestaoObra_TP25460
 {
     public partial class DeleteFuncionario : Form
     {
-        private List<GestaoObra_TP25460.Models.Funcionario> funcionarios;
+        private List<Classes.Funcionario> funcionarios;
         private static string CaminhoArquivo => Path.Combine("C:\\GestaoObra_TP25460\\Data", "funcionarios.txt");
 
         public DeleteFuncionario()
@@ -20,7 +19,7 @@ namespace GestaoObra_TP25460
 
         private void CarregarFuncionarios()
         {
-            funcionarios = GestaoObra_TP25460.Models.Funcionario.CarregarFuncionarios();
+            funcionarios = Classes.Funcionario.CarregarFuncionarios();
             cmbFuncionarios.DataSource = funcionarios;
             cmbFuncionarios.DisplayMember = "Nome";
             cmbFuncionarios.ValueMember = "Id";
@@ -28,7 +27,7 @@ namespace GestaoObra_TP25460
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (cmbFuncionarios.SelectedItem is GestaoObra_TP25460.Models.Funcionario funcionarioSelecionado)
+            if (cmbFuncionarios.SelectedItem is Classes.Funcionario funcionarioSelecionado)
             {
                 funcionarios.RemoveAll(f => f.Id == funcionarioSelecionado.Id);
                 SalvarFuncionariosAtualizados();

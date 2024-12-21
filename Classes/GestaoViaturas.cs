@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GestaoObra_TP25460
+namespace GestaoObra_TP25460.Classes
 {
     // Classe para gerenciar as viaturas
     public class GestaoViaturas

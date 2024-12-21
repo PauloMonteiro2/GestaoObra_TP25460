@@ -1,5 +1,4 @@
-﻿
-namespace GestaoObra_TP25460
+﻿namespace GestaoObra_TP25460.Classes
 {
     internal class EditarFuncionarioForm
     {
