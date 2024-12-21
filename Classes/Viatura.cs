@@ -55,7 +55,7 @@ namespace GestaoObra_TP25460.Classes
         }
         #endregion
 
-        #region Métodos para Gerenciar a Lista de Viaturas
+        #region Métodos para gerir a Lista de Viaturas
         // Método para adicionar uma viatura à lista e salvar no arquivo
         public static void AdicionarViatura(Viatura viatura)
         {

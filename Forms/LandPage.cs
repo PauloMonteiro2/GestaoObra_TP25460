@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using GestaoObra;
+using GestaoObra_TP25460.Classes;
 using GestaoObra_TP25460.Forms;
 using GestaoObra_TP25460.Funcionario;
-using GestaoObra_TP25460.Models;
+
 
 namespace GestaoObra_TP25460
 {

@@ -26,5 +26,10 @@ namespace GestaoObra_TP25460.Funcionario
         {
 
         }
+
+        private void AddFuncionario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

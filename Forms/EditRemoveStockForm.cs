@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using GestaoObra_TP25460;
 
+
 namespace GestaoObra
 {
     public partial class EditRemoveStockForm : Form
@@ -20,7 +21,7 @@ namespace GestaoObra
             comboBoxMateriais.Items.Clear();
             foreach (var material in armazem.Stock)
             {
-                comboBoxMateriais.Items.Add(material.Nome);
+                int v = comboBoxMateriais.Items.Add(material.Nome);
             }
         }
 

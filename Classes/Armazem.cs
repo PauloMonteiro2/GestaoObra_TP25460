@@ -7,6 +7,9 @@ public class Armazem
     #region Atributos
     // Lista que armazena os materiais no armazém
     private List<Material> stock;
+    public List<Material> Stock { get; set; }
+
+    
     #endregion
 
     #region Construtor

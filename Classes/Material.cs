@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestaoObra_TP25460.Classes
 {
-    // Classe para representar um Material no Armazém
+   
+
     public class Material
     {
         public string Nome { get; set; }
@@ -18,5 +16,4 @@ namespace GestaoObra_TP25460.Classes
             Quantidade = quantidade;
         }
     }
-
 }
