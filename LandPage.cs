@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using GestaoObra;
 using GestaoObra_TP25460.Forms;
 using GestaoObra_TP25460.Funcionario;
 using GestaoObra_TP25460.Models;
@@ -33,7 +34,6 @@ namespace GestaoObra_TP25460
 
         private void btnEditFuncionario_Click(object sender, EventArgs e)
         {
-            // Exemplo: Obter o ID do funcionário de uma entrada de texto ou outra fonte
             int funcionarioId = ObterFuncionarioId();
             if (funcionarioId > 0)
             {
@@ -54,7 +54,6 @@ namespace GestaoObra_TP25460
 
         private void btnConsultaStock_Click(object sender, EventArgs e)
         {
-            // Exemplo: Criar um objeto Armazem e passá-lo para o formulário
             var armazem = new Armazem();
             var form = new ConsultaStockForm(armazem);
             form.ShowDialog();
@@ -62,21 +61,36 @@ namespace GestaoObra_TP25460
 
         private void btnEditarObra_Click(object sender, EventArgs e)
         {
-            // Exemplo: Criar um objeto Obra e passá-lo para o formulário
             var obra = new Obra("Obra Exemplo", "Descrição Exemplo", 50000, DateTime.Now);
             var form = new EditarObraForm(obra);
             form.ShowDialog();
         }
 
+        private void btnEditRemoveStock_Click(object sender, EventArgs e)
+        {
+            var armazem = new Armazem();
+            var form = new EditRemoveStockForm(armazem);
+            form.ShowDialog();
+        }
+
         private int ObterFuncionarioId()
         {
-            // Implementar lógica para obter o ID do funcionário (exemplo: fixo para teste)
-            return 1; // ID fictício
+            return 1;
         }
 
         private void LandPage_Load(object sender, EventArgs e)
         {
             // Qualquer inicialização adicional
+        }
+
+        private void LandPage_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddTipo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
