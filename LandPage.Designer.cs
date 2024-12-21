@@ -5,94 +5,97 @@ namespace GestaoObra_TP25460
     partial class LandPage
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Button btnAddFuncionario;
         private System.Windows.Forms.Button btnAddObra;
+        private System.Windows.Forms.Button btnAddTipo;
         private System.Windows.Forms.Button btnAddViatura;
-        private System.Windows.Forms.Button btnEditarFuncionario;
+        private System.Windows.Forms.Button btnEditFuncionario;
         private System.Windows.Forms.Button btnFormViaturas;
+        private System.Windows.Forms.Button btnConsultaStock;
         private System.Windows.Forms.Button btnEditarObra;
+        private System.Windows.Forms.Button btnEditarFuncionario;
 
         private void InitializeComponent()
         {
-            btnAddFuncionario = new Button();
-            btnAddObra = new Button();
-            btnAddViatura = new Button();
-            btnEditarFuncionario = new Button();
-            btnFormViaturas = new Button();
-            btnEditarObra = new Button();
+            btnAddObra = new System.Windows.Forms.Button();
+            btnAddTipo = new System.Windows.Forms.Button();
+            btnAddViatura = new System.Windows.Forms.Button();
+            btnEditFuncionario = new System.Windows.Forms.Button();
+            btnFormViaturas = new System.Windows.Forms.Button();
+            btnConsultaStock = new System.Windows.Forms.Button();
+            btnEditarObra = new System.Windows.Forms.Button();
+            btnEditarFuncionario = new System.Windows.Forms.Button();
+
             SuspendLayout();
 
-            // btnAddFuncionario
-            btnAddFuncionario.Location = new Point(50, 50);
-            btnAddFuncionario.Name = "btnAddFuncionario";
-            btnAddFuncionario.Size = new Size(200, 30);
-            btnAddFuncionario.TabIndex = 0;
-            btnAddFuncionario.Text = "Adicionar Funcionário";
-            btnAddFuncionario.Click += btnAddFuncionario_Click;
-
             // btnAddObra
-            btnAddObra.Location = new Point(50, 100);
+            btnAddObra.Location = new System.Drawing.Point(50, 50);
             btnAddObra.Name = "btnAddObra";
-            btnAddObra.Size = new Size(200, 30);
-            btnAddObra.TabIndex = 1;
+            btnAddObra.Size = new System.Drawing.Size(200, 30);
             btnAddObra.Text = "Adicionar Obra";
             btnAddObra.Click += btnAddObra_Click;
 
+            // btnAddTipo
+            btnAddTipo.Location = new System.Drawing.Point(50, 90);
+            btnAddTipo.Name = "btnAddTipo";
+            btnAddTipo.Size = new System.Drawing.Size(200, 30);
+            btnAddTipo.Text = "Adicionar Tipo";
+           
+
             // btnAddViatura
-            btnAddViatura.Location = new Point(50, 150);
+            btnAddViatura.Location = new System.Drawing.Point(50, 130);
             btnAddViatura.Name = "btnAddViatura";
-            btnAddViatura.Size = new Size(200, 30);
-            btnAddViatura.TabIndex = 2;
+            btnAddViatura.Size = new System.Drawing.Size(200, 30);
             btnAddViatura.Text = "Adicionar Viatura";
             btnAddViatura.Click += btnAddViatura_Click;
 
-            // btnEditarFuncionario
-            btnEditarFuncionario.Location = new Point(50, 200);
-            btnEditarFuncionario.Name = "btnEditarFuncionario";
-            btnEditarFuncionario.Size = new Size(200, 30);
-            btnEditarFuncionario.TabIndex = 3;
-            btnEditarFuncionario.Text = "Editar Funcionário";
+            // btnEditFuncionario
+            btnEditFuncionario.Location = new System.Drawing.Point(50, 170);
+            btnEditFuncionario.Name = "btnEditFuncionario";
+            btnEditFuncionario.Size = new System.Drawing.Size(200, 30);
+            btnEditFuncionario.Text = "Editar Funcionário";
+            btnEditFuncionario.Click += btnEditFuncionario_Click;
 
             // btnFormViaturas
-            btnFormViaturas.Location = new Point(50, 250);
+            btnFormViaturas.Location = new System.Drawing.Point(50, 210);
             btnFormViaturas.Name = "btnFormViaturas";
-            btnFormViaturas.Size = new Size(200, 30);
-            btnFormViaturas.TabIndex = 4;
+            btnFormViaturas.Size = new System.Drawing.Size(200, 30);
             btnFormViaturas.Text = "Gerir Viaturas";
             btnFormViaturas.Click += btnFormViaturas_Click;
 
+            // btnConsultaStock
+            btnConsultaStock.Location = new System.Drawing.Point(50, 250);
+            btnConsultaStock.Name = "btnConsultaStock";
+            btnConsultaStock.Size = new System.Drawing.Size(200, 30);
+            btnConsultaStock.Text = "Consultar Stock";
+            btnConsultaStock.Click += btnConsultaStock_Click;
+
             // btnEditarObra
-            btnEditarObra.Location = new Point(50, 300);
+            btnEditarObra.Location = new System.Drawing.Point(50, 290);
             btnEditarObra.Name = "btnEditarObra";
-            btnEditarObra.Size = new Size(200, 30);
-            btnEditarObra.TabIndex = 5;
+            btnEditarObra.Size = new System.Drawing.Size(200, 30);
             btnEditarObra.Text = "Editar Obra";
             btnEditarObra.Click += btnEditarObra_Click;
 
+            // btnEditarFuncionario
+            btnEditarFuncionario.Location = new System.Drawing.Point(50, 330);
+            btnEditarFuncionario.Name = "btnEditarFuncionario";
+            btnEditarFuncionario.Size = new System.Drawing.Size(200, 30);
+            btnEditarFuncionario.Text = "Editar Funcionário";
+            
+
             // LandPage
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnAddFuncionario);
+            ClientSize = new System.Drawing.Size(800, 450);
             Controls.Add(btnAddObra);
+            Controls.Add(btnAddTipo);
             Controls.Add(btnAddViatura);
-            Controls.Add(btnEditarFuncionario);
+            Controls.Add(btnEditFuncionario);
             Controls.Add(btnFormViaturas);
+            Controls.Add(btnConsultaStock);
             Controls.Add(btnEditarObra);
+            Controls.Add(btnEditarFuncionario);
             Name = "LandPage";
             Text = "Gestão de Obras";
-           
             ResumeLayout(false);
-        }
-
-        private void btnFormViaturas_Click(object sender, EventArgs e)
-        {
-            var form = new FormViaturas();
-            form.ShowDialog();
-        }
-
-        private void btnEditarObra_Click(object sender, EventArgs e)
-        {
-            var form = new EditarObraForm(new Obra("Obra Exemplo", "Descrição Exemplo", 50000, DateTime.Now));
-            form.ShowDialog();
         }
     }
 }

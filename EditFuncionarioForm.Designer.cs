@@ -25,74 +25,115 @@
 
         private void InitializeComponent()
         {
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.lblSalario = new System.Windows.Forms.Label();
-            this.txtSalario = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-
-            this.SuspendLayout();
-
+            lblId = new Label();
+            txtId = new TextBox();
+            lblNome = new Label();
+            txtNome = new TextBox();
+            lblCargo = new Label();
+            txtCargo = new TextBox();
+            lblSalario = new Label();
+            txtSalario = new TextBox();
+            btnSalvar = new Button();
+            btnCancelar = new Button();
+            SuspendLayout();
+            // 
             // lblId
-            this.lblId.Text = "ID:";
-            this.lblId.Location = new System.Drawing.Point(12, 15);
-
+            // 
+            lblId.Location = new Point(12, 15);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(100, 23);
+            lblId.TabIndex = 0;
+            lblId.Text = "ID:";
+            // 
             // txtId
-            this.txtId.Location = new System.Drawing.Point(100, 12);
-            this.txtId.ReadOnly = true;
-
+            // 
+            txtId.Location = new Point(100, 12);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(100, 27);
+            txtId.TabIndex = 1;
+            // 
             // lblNome
-            this.lblNome.Text = "Nome:";
-            this.lblNome.Location = new System.Drawing.Point(12, 45);
-
+            // 
+            lblNome.Location = new Point(12, 45);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(100, 23);
+            lblNome.TabIndex = 2;
+            lblNome.Text = "Nome:";
+            // 
             // txtNome
-            this.txtNome.Location = new System.Drawing.Point(100, 42);
-
+            // 
+            txtNome.Location = new Point(100, 42);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(100, 27);
+            txtNome.TabIndex = 3;
+            // 
             // lblCargo
-            this.lblCargo.Text = "Cargo:";
-            this.lblCargo.Location = new System.Drawing.Point(12, 75);
-
+            // 
+            lblCargo.Location = new Point(12, 75);
+            lblCargo.Name = "lblCargo";
+            lblCargo.Size = new Size(100, 23);
+            lblCargo.TabIndex = 4;
+            lblCargo.Text = "Cargo:";
+            // 
             // txtCargo
-            this.txtCargo.Location = new System.Drawing.Point(100, 72);
-
+            // 
+            txtCargo.Location = new Point(100, 72);
+            txtCargo.Name = "txtCargo";
+            txtCargo.Size = new Size(100, 27);
+            txtCargo.TabIndex = 5;
+            // 
             // lblSalario
-            this.lblSalario.Text = "Salário:";
-            this.lblSalario.Location = new System.Drawing.Point(12, 105);
-
+            // 
+            lblSalario.Location = new Point(12, 105);
+            lblSalario.Name = "lblSalario";
+            lblSalario.Size = new Size(100, 23);
+            lblSalario.TabIndex = 6;
+            lblSalario.Text = "Salário:";
+            // 
             // txtSalario
-            this.txtSalario.Location = new System.Drawing.Point(100, 102);
-
+            // 
+            txtSalario.Location = new Point(100, 102);
+            txtSalario.Name = "txtSalario";
+            txtSalario.Size = new Size(100, 27);
+            txtSalario.TabIndex = 7;
+            // 
             // btnSalvar
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.Location = new System.Drawing.Point(100, 140);
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-
+            // 
+            btnSalvar.Location = new Point(100, 140);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(75, 23);
+            btnSalvar.TabIndex = 8;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.Click += btnSalvar_Click;
+            // 
             // btnCancelar
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Location = new System.Drawing.Point(200, 140);
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-
+            // 
+            btnCancelar.Location = new Point(200, 140);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 9;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // EditFuncionarioForm
-            this.ClientSize = new System.Drawing.Size(320, 200);
-            this.Controls.Add(this.lblId);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.lblCargo);
-            this.Controls.Add(this.txtCargo);
-            this.Controls.Add(this.lblSalario);
-            this.Controls.Add(this.txtSalario);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnCancelar);
-            this.Text = "Editar Funcionário";
-
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            ClientSize = new Size(320, 200);
+            Controls.Add(lblId);
+            Controls.Add(txtId);
+            Controls.Add(lblNome);
+            Controls.Add(txtNome);
+            Controls.Add(lblCargo);
+            Controls.Add(txtCargo);
+            Controls.Add(lblSalario);
+            Controls.Add(txtSalario);
+            Controls.Add(btnSalvar);
+            Controls.Add(btnCancelar);
+            Name = "EditFuncionarioForm";
+            Text = "Editar Funcionário";
+            Load += EditFuncionarioForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

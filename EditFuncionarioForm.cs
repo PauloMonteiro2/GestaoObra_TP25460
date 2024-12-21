@@ -5,12 +5,18 @@ namespace GestaoObra_TP25460.Forms
     public partial class EditFuncionarioForm : Form
     {
         private GestaoObra_TP25460.Models.Funcionario funcionarioAtual;
+        private int funcionarioId;
 
         public EditFuncionarioForm(GestaoObra_TP25460.Models.Funcionario funcionario)
         {
             InitializeComponent();
             funcionarioAtual = funcionario;
             PreencherDados(funcionario);
+        }
+
+        public EditFuncionarioForm(int funcionarioId)
+        {
+            this.funcionarioId = funcionarioId;
         }
 
         private void PreencherDados(GestaoObra_TP25460.Models.Funcionario funcionario)
@@ -42,6 +48,11 @@ namespace GestaoObra_TP25460.Forms
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void EditFuncionarioForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

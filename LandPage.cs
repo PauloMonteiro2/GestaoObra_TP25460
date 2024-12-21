@@ -1,47 +1,82 @@
-﻿using GestaoObra_TP25460.Funcionario;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using GestaoObra_TP25460.Forms;
+using GestaoObra_TP25460.Funcionario;
+using GestaoObra_TP25460.Models;
 
 namespace GestaoObra_TP25460
 {
     public partial class LandPage : Form
     {
-        private GestaoViaturas gestaoViaturas;
-
         public LandPage()
         {
             InitializeComponent();
-            gestaoViaturas = new GestaoViaturas();
         }
 
         private void btnAddFuncionario_Click(object sender, EventArgs e)
         {
             var form = new AddFuncionario();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void btnAddObra_Click(object sender, EventArgs e)
         {
             var form = new AddObraForm();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void btnAddViatura_Click(object sender, EventArgs e)
         {
             var form = new AddViaturaForm();
-            form.Show();
+            form.ShowDialog();
         }
 
-        private void BtnAddFuncionario_Click(object sender, EventArgs e)
+        private void btnEditFuncionario_Click(object sender, EventArgs e)
         {
-            var form = new AddFuncionario();
-            form.Show();
+            // Exemplo: Obter o ID do funcionário de uma entrada de texto ou outra fonte
+            int funcionarioId = ObterFuncionarioId();
+            if (funcionarioId > 0)
+            {
+                var form = new EditFuncionarioForm(funcionarioId);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um funcionário válido para editar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-       
+        private void btnFormViaturas_Click(object sender, EventArgs e)
+        {
+            var form = new FormViaturas();
+            form.ShowDialog();
+        }
 
-       
+        private void btnConsultaStock_Click(object sender, EventArgs e)
+        {
+            // Exemplo: Criar um objeto Armazem e passá-lo para o formulário
+            var armazem = new Armazem();
+            var form = new ConsultaStockForm(armazem);
+            form.ShowDialog();
+        }
 
- 
+        private void btnEditarObra_Click(object sender, EventArgs e)
+        {
+            // Exemplo: Criar um objeto Obra e passá-lo para o formulário
+            var obra = new Obra("Obra Exemplo", "Descrição Exemplo", 50000, DateTime.Now);
+            var form = new EditarObraForm(obra);
+            form.ShowDialog();
+        }
+
+        private int ObterFuncionarioId()
+        {
+            // Implementar lógica para obter o ID do funcionário (exemplo: fixo para teste)
+            return 1; // ID fictício
+        }
+
+        private void LandPage_Load(object sender, EventArgs e)
+        {
+            // Qualquer inicialização adicional
+        }
     }
 }

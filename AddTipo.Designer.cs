@@ -14,7 +14,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            // Configuração dos Controles
+            // Configuração dos Controlo
             this.lblDescricao.Text = "Descrição:";
             this.lblDescricao.Location = new System.Drawing.Point(20, 20);
             this.txtDescricao.Location = new System.Drawing.Point(150, 20);
@@ -24,7 +24,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(150, 60);
             
 
-            // Adicionando Controles ao Formulário
+            // Adicionando Controlos ao Formulário
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.btnGuardar);
