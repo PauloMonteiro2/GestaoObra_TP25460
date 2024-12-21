@@ -44,7 +44,7 @@ Este é um projeto desenvolvido para a disciplina de Programação Orientada a O
 
 ## Autor
 
-Paulo Monteiro
+Paulo Monteiro a25460
 
 Este projeto é apenas para fins académicos e não deve ser usado em produção.
 
